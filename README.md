@@ -4,6 +4,7 @@ Implemented data query and manipulation APIs with Docker, Node, PostgreSQL, Nest
 
 - [Graphql with Nestjs and CI/CD](#graphql-with-nestjs-and-cicd)
   - [Creating the backend server](#creating-the-backend-server)
+  - [Add GraphQL support](#add-graphql-support)
 
 ## Creating the backend server
 
@@ -14,4 +15,8 @@ $ cd ref-fullstack-2406
 $ npm run start:dev
 ```
 
-DevOps project CICD with Next.js
+## Add GraphQL support
+
+```sh
+npm i @nestjs/graphql @nestjs/apollo @apollo/server graphql
+```
