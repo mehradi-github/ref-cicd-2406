@@ -29,4 +29,7 @@ nest g resource todo
 npm i -D prisma
 npx prisma init
 # npx prisma init --datasource-provider postgresql
+
+# after add model
+npx prisma migrate dev --name initialize
 ```
