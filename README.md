@@ -32,4 +32,5 @@ npx prisma init
 
 # after add model
 npx prisma migrate dev --name initialize
+npx prisma generate
 ```
