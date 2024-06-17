@@ -6,4 +6,8 @@ export class Todo {
   id: number;
   @Field(() => String, { nullable: true })
   title?: string;
+  @Field()
+  createdAt: Date;
+  @Field()
+  updatedAt: Date;
 }
