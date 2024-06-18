@@ -19,13 +19,14 @@ type Mutation {
 
 type Query {
   todo(id: Int!): Todo!
+  todoList: [Todo!]!
 }
 
 type Todo {
-  createdAt: DateTime!
+  createAt: DateTime!
   id: Int!
-  title: String
-  updatedAt: DateTime!
+  title: String!
+  updateAt: DateTime!
 }
 
 input UpdateTodoInput {

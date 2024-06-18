@@ -4,10 +4,10 @@ import { ObjectType, Field, Int } from '@nestjs/graphql';
 export class Todo {
   @Field(() => Int)
   id: number;
-  @Field(() => String, { nullable: true })
-  title?: string;
-  @Field()
-  createdAt: Date;
-  @Field()
-  updatedAt: Date;
+  @Field(() => String, { nullable: false })
+  title: string;
+  @Field(() => Date, { nullable: false })
+  createAt: Date;
+  @Field(() => Date, { nullable: false })
+  updateAt: Date;
 }
