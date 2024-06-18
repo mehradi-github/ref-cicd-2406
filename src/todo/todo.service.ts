@@ -21,7 +21,10 @@ export class TodoService {
   }
 
   update(id: number, updateTodoInput: UpdateTodoInput) {
-    return `This action updates a #${id} todo`;
+    return this.prisma.todo.update({
+      where: { id },
+      data: { title: updateTodoInput.title },
+    });
   }
 
   remove(id: number) {
