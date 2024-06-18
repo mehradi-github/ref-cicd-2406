@@ -13,11 +13,11 @@ export class TodoService {
   }
 
   findAll() {
-    return `This action returns all todo`;
+    return this.prisma.todo.findMany();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} todo`;
+    return this.prisma.todo.findUnique({ where: { id } });
   }
 
   update(id: number, updateTodoInput: UpdateTodoInput) {
