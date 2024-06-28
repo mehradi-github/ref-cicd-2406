@@ -12,6 +12,7 @@ RUN npm run prisma:database
 
 FROM base AS production
 ENV NODE_ENV=production
+RUN npm install -g serve
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 reactjs
 USER reactjs
@@ -21,7 +22,7 @@ COPY --from=build --chown=reactjs:nodejs /app/prisma/schema.prisma ./prisma/sche
 COPY --from=build --chown=reactjs:nodejs /app/public ./public
 
 EXPOSE 3000
-CMD [ "npm","start" ]
+CMD serve -s build
 
 
 FROM lts-alpine3.20 AS dev
