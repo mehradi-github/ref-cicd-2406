@@ -1,4 +1,4 @@
-FROM lts-alpine3.20 AS base
+FROM node:lts-alpine3.20 AS base
 WORKDIR /app
 COPY package.json .
 RUN npm install 
@@ -25,7 +25,7 @@ EXPOSE 3000
 CMD serve -s build
 
 
-FROM lts-alpine3.20 AS dev
+FROM node:lts-alpine3.20 AS dev
 WORKDIR /app
 ENV NODE_ENV=development
 COPY . .
